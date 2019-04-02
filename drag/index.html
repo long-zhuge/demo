@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Draggable</title>
+  <style>
+    #drag {
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+      border: 1px solid red;
+      cursor: move;
+      position: absolute;
+    }
+
+    #drag1 {
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+      border: 1px solid red;
+      cursor: move;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
+  <script src="drag.js"></script>
+</head>
+<body>
+  <div id="drag" ></div>
+  <div id="drag1">222222</div>
+</body>
+<script>
+  var dragDom = document.getElementById('drag');
+  var dragging = new Drag();
+  dragging.create(dragDom);
+
+  var dragDom1 = document.getElementById('drag1');
+  var dragging1 = new Drag();
+  dragging1.create(dragDom1);
+</script>
+</html>
