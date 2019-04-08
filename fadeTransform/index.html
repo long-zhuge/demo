@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>淡入淡出效果</title>
+  <style type="text/css">
+    #targetDiv
+    {
+      width: 150px;
+      height:0;
+      text-align:center;
+      background: #8a8a8a;
+      color: #fff;
+      border: 1px solid #000;
+      top: 60px;
+
+      position:absolute;
+      opacity: 0;
+      -webkit-transition: all .3s ease-in;
+      -moz-transition: all .3s ease-in;
+      transition: all .3s ease-in;
+    }
+    #targetDiv.move
+    {
+      opacity: 1;
+      height: 200px;
+    }
+
+    #btnin
+    {
+      padding:10px 20px;
+      background: #ff5a37;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:;" id="btnin">淡入/淡出</a>
+
+<div id="targetDiv">
+  淡入淡出面板
+</div>
+
+<script>
+  (function(){
+    var show = false;
+    document.getElementById('btnin').addEventListener('click',function(e){
+      if (show) {
+        show = false;
+        document.querySelector('#targetDiv').className = '';
+      } else {
+        show = true;
+        document.querySelector('#targetDiv').className = 'move';
+      }
+    },false);
+  })();
+</script>
+</body>
+</html>
