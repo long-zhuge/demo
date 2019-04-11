@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>matchMedia</title>
+</head>
+<body>
+  <div>使用 window.matchMedia 监听浏览器端口变化，当宽度小于 1024px 时会变色</div>
+</body>
+<script>
+  window.onload = () => {
+    const myFunction = (query) => {
+      if (query.matches) { // 媒体查询
+        document.body.style.backgroundColor = "yellow";
+      } else {
+        document.body.style.backgroundColor = "pink";
+      }
+    };
+
+    try {
+      const query = window.matchMedia('(max-width: 1024px)');
+      myFunction(query);
+      query.addListener(myFunction);
+
+    } catch (e) {
+      throw '无 window.matchMedia 方法';
+    }
+  };
+</script>
+</html>
